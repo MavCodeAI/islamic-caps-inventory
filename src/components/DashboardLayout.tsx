@@ -1,5 +1,5 @@
 import { SidebarProvider, Sidebar, SidebarContent, SidebarMenu, SidebarMenuItem, SidebarMenuButton } from "@/components/ui/sidebar";
-import { Package2, ShoppingCart, TrendingUp, Truck, BarChart3 } from "lucide-react";
+import { Package2, ShoppingCart, TrendingUp, Truck, BarChart3, Settings } from "lucide-react";
 
 export const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -47,6 +47,14 @@ export const DashboardLayout = ({ children }: { children: React.ReactNode }) => 
                     <a href="/expenses" className="flex items-center gap-2">
                       <BarChart3 className="h-4 w-4" />
                       <span>Expenses</span>
+                    </a>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+                <SidebarMenuItem>
+                  <SidebarMenuButton asChild>
+                    <a href="/settings" className="flex items-center gap-2">
+                      <Settings className="h-4 w-4" />
+                      <span>Settings</span>
                     </a>
                   </SidebarMenuButton>
                 </SidebarMenuItem>

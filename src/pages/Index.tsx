@@ -8,6 +8,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/components/ui/use-toast";
 import {
   LineChart,
   Line,
@@ -27,7 +29,22 @@ const data = [
   { name: "Jun", sales: 5500 },
 ];
 
+const lowStockItems = [
+  { name: "Regular Boxes", quantity: 5, threshold: 10 },
+  { name: "Premium Boxes", quantity: 15, threshold: 20 },
+  { name: "Marketing Flyers", quantity: 20, threshold: 30 },
+];
+
 const Index = () => {
+  const { toast } = useToast();
+
+  const handleReorder = (itemName: string) => {
+    toast({
+      title: "Reorder Initiated",
+      description: `A reorder request has been created for ${itemName}.`,
+    });
+  };
+
   return (
     <DashboardLayout>
       <div className="space-y-6">
@@ -91,18 +108,23 @@ const Index = () => {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="font-medium">Regular Boxes</span>
-                  <span className="text-red-500">5 left</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="font-medium">Premium Boxes</span>
-                  <span className="text-yellow-500">15 left</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="font-medium">Marketing Flyers</span>
-                  <span className="text-yellow-500">20 left</span>
-                </div>
+                {lowStockItems.map((item) => (
+                  <div key={item.name} className="flex items-center justify-between">
+                    <div>
+                      <span className="font-medium">{item.name}</span>
+                      <p className="text-sm text-muted-foreground">
+                        {item.quantity} left
+                      </p>
+                    </div>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => handleReorder(item.name)}
+                    >
+                      Reorder
+                    </Button>
+                  </div>
+                ))}
               </div>
             </CardContent>
           </Card>
