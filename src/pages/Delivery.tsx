@@ -1,8 +1,16 @@
 import { DashboardLayout } from "@/components/DashboardLayout";
-import { Button } from "@/components/ui/button";
+import { AssignDeliveryDialog } from "@/components/AssignDeliveryDialog";
 import { Input } from "@/components/ui/input";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Search, Truck } from "lucide-react";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { Button } from "@/components/ui/button";
+import { Search } from "lucide-react";
 import { useState } from "react";
 
 const Delivery = () => {
@@ -34,10 +42,7 @@ const Delivery = () => {
       <div className="space-y-6">
         <div className="flex items-center justify-between">
           <h2 className="text-3xl font-bold tracking-tight">Deliveries</h2>
-          <Button>
-            <Truck className="mr-2 h-4 w-4" />
-            Assign Delivery
-          </Button>
+          <AssignDeliveryDialog />
         </div>
 
         <div className="flex items-center gap-4">

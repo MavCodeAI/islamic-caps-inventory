@@ -1,5 +1,20 @@
-import { SidebarProvider, Sidebar, SidebarContent, SidebarMenu, SidebarMenuItem, SidebarMenuButton } from "@/components/ui/sidebar";
-import { Package2, ShoppingCart, TrendingUp, Truck, BarChart3, Settings } from "lucide-react";
+import {
+  SidebarProvider,
+  Sidebar,
+  SidebarContent,
+  SidebarMenu,
+  SidebarMenuItem,
+  SidebarMenuButton,
+} from "@/components/ui/sidebar";
+import {
+  Package2,
+  ShoppingCart,
+  TrendingUp,
+  Truck,
+  BarChart3,
+  Settings,
+  Box,
+} from "lucide-react";
 
 export const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -8,13 +23,23 @@ export const DashboardLayout = ({ children }: { children: React.ReactNode }) => 
         <Sidebar>
           <SidebarContent>
             <div className="px-3 py-4">
-              <h1 className="text-xl font-bold text-primary mb-6">Islamic Caps Manager</h1>
+              <h1 className="text-xl font-bold text-primary mb-6">
+                Islamic Caps Manager
+              </h1>
               <SidebarMenu>
                 <SidebarMenuItem>
                   <SidebarMenuButton asChild>
                     <a href="/" className="flex items-center gap-2">
                       <Package2 className="h-4 w-4" />
                       <span>Inventory</span>
+                    </a>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+                <SidebarMenuItem>
+                  <SidebarMenuButton asChild>
+                    <a href="/products" className="flex items-center gap-2">
+                      <Box className="h-4 w-4" />
+                      <span>Products</span>
                     </a>
                   </SidebarMenuButton>
                 </SidebarMenuItem>

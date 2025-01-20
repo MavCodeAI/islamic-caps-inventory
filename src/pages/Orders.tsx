@@ -1,8 +1,16 @@
 import { DashboardLayout } from "@/components/DashboardLayout";
-import { Button } from "@/components/ui/button";
+import { AddOrderDialog } from "@/components/AddOrderDialog";
 import { Input } from "@/components/ui/input";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Package2, Plus, Search } from "lucide-react";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { Button } from "@/components/ui/button";
+import { Search } from "lucide-react";
 import { useState } from "react";
 
 const Orders = () => {
@@ -32,10 +40,7 @@ const Orders = () => {
       <div className="space-y-6">
         <div className="flex items-center justify-between">
           <h2 className="text-3xl font-bold tracking-tight">Orders</h2>
-          <Button>
-            <Plus className="mr-2 h-4 w-4" />
-            New Order
-          </Button>
+          <AddOrderDialog />
         </div>
 
         <div className="flex items-center gap-4">

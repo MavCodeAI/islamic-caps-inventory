@@ -1,8 +1,14 @@
 import { DashboardLayout } from "@/components/DashboardLayout";
-import { Button } from "@/components/ui/button";
+import { AddExpenseDialog } from "@/components/AddExpenseDialog";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Plus } from "lucide-react";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from "recharts";
 
 const expenses = [
@@ -35,10 +41,7 @@ const Expenses = () => {
       <div className="space-y-6">
         <div className="flex items-center justify-between">
           <h2 className="text-3xl font-bold tracking-tight">Expenses</h2>
-          <Button>
-            <Plus className="mr-2 h-4 w-4" />
-            Add Expense
-          </Button>
+          <AddExpenseDialog />
         </div>
 
         <div className="grid gap-4 md:grid-cols-2">
