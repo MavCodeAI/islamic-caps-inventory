@@ -7,7 +7,7 @@ import {
   SidebarMenuButton,
 } from "@/components/ui/sidebar";
 import {
-  Package2,
+  LayoutDashboard,
   ShoppingCart,
   TrendingUp,
   Truck,
@@ -30,8 +30,8 @@ export const DashboardLayout = ({ children }: { children: React.ReactNode }) => 
                 <SidebarMenuItem>
                   <SidebarMenuButton asChild>
                     <a href="/" className="flex items-center gap-2">
-                      <Package2 className="h-4 w-4" />
-                      <span>Inventory</span>
+                      <LayoutDashboard className="h-4 w-4" />
+                      <span>Dashboard</span>
                     </a>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
